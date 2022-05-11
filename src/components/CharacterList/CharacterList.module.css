@@ -1,0 +1,9 @@
+.character_box {
+}
+.character_list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.character_list_item {
+}

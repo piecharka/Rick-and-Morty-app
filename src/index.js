@@ -1,12 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { CharacterContextProvider } from "./store/character-context";
 import "./index.css";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <CharacterContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </CharacterContextProvider>
   </React.StrictMode>
 );
 

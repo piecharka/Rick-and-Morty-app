@@ -1,0 +1,13 @@
+.item_box {
+  display: grid;
+  max-width: 40rem;
+  grid-template-columns: 0.5fr 1fr;
+  column-gap: 1.6rem;
+  background-color: #343a40;
+}
+.item_content {
+}
+
+.item_img {
+  width: 15rem;
+}
