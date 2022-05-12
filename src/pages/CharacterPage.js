@@ -23,7 +23,7 @@ const CharacterPage = () => {
 
   return (
     <Fragment>
-      <CharacterList data={data} />
+      <CharacterList data={data.results} />
     </Fragment>
   );
 };

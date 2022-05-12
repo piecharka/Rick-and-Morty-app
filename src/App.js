@@ -1,15 +1,19 @@
 import { Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
+import CharacterDetailsPage from "./pages/CharacterDetailsPage";
 import CharacterPage from "./pages/CharacterPage";
-import FavouriteCharacterList from "./pages/FavouriteCharacterList";
+import FavouriteCharacterListPage from "./pages/FavouriteCharacterListPage";
 function App() {
   return (
     <div>
+      <Navigation />
       <Routes>
-        <Route path="/charakters" element={<CharacterPage />} />
+        <Route path="/characters" element={<CharacterPage />} />
         <Route
-          path="/favourite-charakters"
-          element={<FavouriteCharacterList />}
+          path="/favourite-characters"
+          element={<FavouriteCharacterListPage />}
         />
+        <Route path="/character/:id" element={<CharacterDetailsPage />} />
       </Routes>
     </div>
   );

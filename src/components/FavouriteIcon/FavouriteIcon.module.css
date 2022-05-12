@@ -1,0 +1,9 @@
+.favourite_icon {
+  font-size: 3.6rem;
+  cursor: pointer;
+  color: #ecabb5;
+  transition: all 0.3s;
+}
+.favourite_icon:hover {
+  color: #d49aa3;
+}

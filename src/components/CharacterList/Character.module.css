@@ -3,11 +3,29 @@
   max-width: 40rem;
   grid-template-columns: 0.5fr 1fr;
   column-gap: 1.6rem;
-  background-color: #343a40;
-}
-.item_content {
+  background-color: #ddeef7;
+
+  border-radius: 2rem;
 }
 
+.item_content {
+  padding: 1.6rem 2rem;
+}
+
+.item_content p {
+  font-size: 1.8rem;
+}
+
+.item_title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.title_box {
+  display: flex;
+  gap: 1.2rem;
+}
 .item_img {
   width: 15rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
