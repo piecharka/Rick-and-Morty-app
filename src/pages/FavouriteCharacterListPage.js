@@ -1,32 +1,19 @@
-import { Fragment, useState, useEffect, useCallback, useContext } from "react";
+import { CircularProgress } from "@mui/material";
+import { Fragment, useContext } from "react";
 import CharacterList from "../components/CharacterList/CharacterList";
+import useFetch from "../components/hooks/use-fetch";
 import CharacterContext from "../store/character-context";
 const FavouriteCharacterListPage = () => {
-  const [data, setData] = useState([]);
   const ctx = useContext(CharacterContext);
-  const fetchData = useCallback(async () => {
-    try {
-      const json = await fetch(
-        `https://rickandmortyapi.com/api/character/${ctx.favouriteCharacterList}`
-      )
-        .then((response) => response.json())
-        .then((data) => data);
-      console.log(json);
-      setData(json);
-    } catch (e) {
-      console.log(e.Message);
-    }
-  }, [ctx.favouriteCharacterList]);
-
-  useEffect(() => {
-    if (ctx.favouriteCharacterList.length !== 0) {
-      fetchData();
-    }
-  }, [fetchData, ctx.favouriteCharacterList]);
+  const [data, isLoading] = useFetch(
+    `https://rickandmortyapi.com/api/character/${ctx.favouriteCharacterList}`,
+    true
+  );
 
   return (
     <Fragment>
-      <CharacterList data={data} />
+      {isLoading && <CircularProgress className="isLoading" />}
+      {!isLoading && <CharacterList data={data} />}
     </Fragment>
   );
 };

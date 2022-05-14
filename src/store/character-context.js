@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 const CharacterContext = React.createContext({
   characterDetailsId: 0,
   favouriteCharacterList: [],
@@ -10,6 +10,25 @@ const CharacterContext = React.createContext({
 export const CharacterContextProvider = (props) => {
   const [detailsId, setDetailsId] = useState(0);
   const [favouriteList, setFavouriteList] = useState([]);
+
+  useEffect(() => {
+    //on beginning
+    const favouriteItemList = JSON.parse(
+      localStorage.getItem("FavouriteCharacterList")
+    );
+
+    if (favouriteItemList.length !== 0) {
+      setFavouriteList(favouriteItemList);
+    }
+  }, []);
+
+  useEffect(() => {
+    //on update
+    localStorage.setItem(
+      "FavouriteCharacterList",
+      JSON.stringify(favouriteList)
+    );
+  }, [favouriteList]);
 
   const addFavouriteCharacterHandler = (id) => {
     setFavouriteList((prevList) => {

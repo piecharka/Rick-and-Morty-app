@@ -8,6 +8,7 @@ function App() {
     <div>
       <Navigation />
       <Routes>
+        <Route path="/" element={<p></p>} />
         <Route path="/characters" element={<CharacterPage />} />
         <Route
           path="/favourite-characters"

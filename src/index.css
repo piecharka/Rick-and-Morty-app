@@ -19,3 +19,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.isLoading {
+  position: fixed;
+  right: 50%;
+  top: 45%;
+}

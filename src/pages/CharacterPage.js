@@ -1,29 +1,18 @@
-import { Fragment, useCallback, useEffect, useState } from "react";
+import { CircularProgress } from "@mui/material";
+import { Fragment } from "react";
 import CharacterList from "../components/CharacterList/CharacterList";
+import useFetch from "../components/hooks/use-fetch";
 
 const CharacterPage = () => {
-  const [data, setData] = useState([]);
-  const fetchData = useCallback(async () => {
-    try {
-      const json = await fetch(
-        "https://rickandmortyapi.com/api/character/?page=1"
-      )
-        .then((response) => response.json())
-        .then((data) => data);
-      console.log(json);
-      setData(json);
-    } catch (e) {
-      console.log(e.Message);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+  const [data, isLoading] = useFetch(
+    "https://rickandmortyapi.com/api/character/?page=1",
+    false
+  );
 
   return (
     <Fragment>
-      <CharacterList data={data.results} />
+      {isLoading && <CircularProgress className="isLoading" />}
+      {!isLoading && <CharacterList data={data.results} />}
     </Fragment>
   );
 };
