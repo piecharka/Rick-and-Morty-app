@@ -1,7 +1,7 @@
 import { CircularProgress } from "@mui/material";
 import { Fragment } from "react";
 import CharacterList from "../components/CharacterList/CharacterList";
-import useFetch from "../components/hooks/use-fetch";
+import useFetch from "../hooks/use-fetch";
 
 const CharacterPage = () => {
   const [data, isLoading] = useFetch(

@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 const CharacterContext = React.createContext({
-  characterDetailsId: 0,
   favouriteCharacterList: [],
   addFavouriteCharacter: (id) => {},
   deleteFavouriteCharacter: (id) => {},
-  setCharacterDetailsId: () => {},
 });
 
 export const CharacterContextProvider = (props) => {
-  const [detailsId, setDetailsId] = useState(0);
   const [favouriteList, setFavouriteList] = useState([]);
 
   useEffect(() => {
@@ -44,11 +41,9 @@ export const CharacterContextProvider = (props) => {
   };
 
   const contextValue = {
-    characterDetailsId: detailsId,
     favouriteCharacterList: favouriteList,
     addFavouriteCharacter: addFavouriteCharacterHandler,
     deleteFavouriteCharacter: deleteFavouriteCharacterHandler,
-    setCharacterDetailsId: setDetailsId,
   };
 
   return (

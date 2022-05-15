@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useContext } from "react";
-import CharacterContext from "../../store/character-context";
+import CharacterContext from "../store/character-context";
 const useFetch = (url, isItFavouriteList) => {
   const [data, setData] = useState(isItFavouriteList ? [] : {});
   const [isLoading, setIsLoading] = useState(false);

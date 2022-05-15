@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import CharacterContext from "../../store/character-context";
 import FavouriteIcon from "../FavouriteIcon/FavouriteIcon";
+import StatusSign from "../UI/StatusSign";
 const Character = (props) => {
   const ctx = useContext(CharacterContext);
   const characterDetailsHandler = () => {
@@ -18,10 +19,10 @@ const Character = (props) => {
       <div className={classes.item_content}>
         <span className={classes.title_box}>
           <h3 className={classes.item_title}>{props.item.name}</h3>
-          <FavouriteIcon id={props.item.id} />
+          <FavouriteIcon id={props.item.id} className={classes.item_icon} />
         </span>
+        <StatusSign status={props.item.status} />
         <p>{props.item.species}</p>
-        <p>{props.item.status}</p>
         <Link
           to={`/character/${props.item.id}`}
           onClick={characterDetailsHandler}

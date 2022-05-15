@@ -1,13 +1,13 @@
 import { CircularProgress } from "@mui/material";
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
+import { useParams } from "react-router-dom";
 import CharacterDetails from "../components/CharacterList/CharacterDetails";
-import useFetch from "../components/hooks/use-fetch";
-import CharacterContext from "../store/character-context";
+import useFetch from "../hooks/use-fetch";
 
 const CharacterDetailsPage = () => {
-  const ctx = useContext(CharacterContext);
+  const { id } = useParams();
   const [data, isLoading] = useFetch(
-    `https://rickandmortyapi.com/api/character/${ctx.characterDetailsId}`,
+    `https://rickandmortyapi.com/api/character/${id}`,
     false
   );
 
