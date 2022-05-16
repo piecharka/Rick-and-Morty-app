@@ -1,11 +1,10 @@
-import { useState, useCallback, useEffect, useContext } from "react";
-import CharacterContext from "../store/character-context";
-const useFetch = (url, isItFavouriteList) => {
-  const [data, setData] = useState(isItFavouriteList ? [] : {});
+import { useState, useCallback, useEffect } from "react";
+const useFetch = (url, { skip = false }) => {
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const ctx = useContext(CharacterContext);
   const fetchData = useCallback(async () => {
     try {
+      if (skip) return;
       setIsLoading(true);
       const json = await fetch(url)
         .then((response) => response.json())
@@ -15,17 +14,15 @@ const useFetch = (url, isItFavouriteList) => {
     } catch (e) {
       console.log(e.Message);
     }
-  }, [url]);
+  }, [skip, url]);
 
   useEffect(() => {
-    if (isItFavouriteList) {
-      if (ctx.favouriteCharacterList.length !== 0) fetchData();
-    } else {
-      fetchData();
-    }
-  }, [fetchData, isItFavouriteList, ctx.favouriteCharacterList]);
+    fetchData();
+  }, [fetchData]);
 
-  return [data, isLoading];
+  const isError = !!(data && data.error);
+
+  return !skip ? [data, isLoading, isError] : [[], false, false];
 };
 
 export default useFetch;

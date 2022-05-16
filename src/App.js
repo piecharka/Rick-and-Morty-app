@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
 import CharacterDetailsPage from "./pages/CharacterDetailsPage";
 import CharacterPage from "./pages/CharacterPage";
@@ -8,7 +8,7 @@ function App() {
     <div>
       <Navigation />
       <Routes>
-        <Route path="/" element={<p></p>} />
+        <Route path="/" element={<Navigate to={"/characters"} />} />
         <Route path="/characters" element={<CharacterPage />} />
         <Route
           path="/favourite-characters"

@@ -14,7 +14,7 @@ export const CharacterContextProvider = (props) => {
       localStorage.getItem("FavouriteCharacterList")
     );
 
-    if (favouriteItemList.length !== 0) {
+    if (favouriteItemList && favouriteItemList.length !== 0) {
       setFavouriteList(favouriteItemList);
     }
   }, []);
