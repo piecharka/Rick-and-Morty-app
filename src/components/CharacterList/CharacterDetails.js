@@ -24,7 +24,7 @@ const CharacterDetails = ({
           <h3 className={classes.details_title}>{name}</h3>
           <FavouriteIcon id={id} />
         </div>
-        <StatusSign status={status} />
+        <StatusSign status={status.charAt(0).toUpperCase() + status.slice(1)} />
         <p>{species}</p>
         <p>{gender}</p>
         {location && <p>Last location: {location.name}</p>}
