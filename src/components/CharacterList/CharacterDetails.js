@@ -17,6 +17,10 @@ const CharacterDetails = (props) => {
         <StatusSign status={props.data.status} />
         <p>{props.data.species}</p>
         <p>{props.data.gender}</p>
+        {props.data.location && (
+          <p>Last location: {props.data.location.name}</p>
+        )}
+        <p>Created: {new Date(props.data.created).toDateString()}</p>
       </div>
     </div>
   );

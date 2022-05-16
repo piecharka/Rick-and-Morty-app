@@ -10,7 +10,6 @@ const useFetch = (url, isItFavouriteList) => {
       const json = await fetch(url)
         .then((response) => response.json())
         .then((data) => data);
-      console.log(json);
       setData(json);
       setIsLoading(false);
     } catch (e) {

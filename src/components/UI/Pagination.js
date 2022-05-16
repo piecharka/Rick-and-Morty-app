@@ -3,7 +3,6 @@ import classes from "./Pagination.module.css";
 const Pagination = (props) => {
   const [page, setPage] = useState(1);
   const pageChangeHandler = (e) => {
-    console.log(e.target.value);
     setPage(e.target.value);
     props.changePage(e.target.value);
   };
