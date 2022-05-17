@@ -11,7 +11,11 @@ const Character = ({ id, image, name, status, species }) => {
           <h3 className={classes.itemTitle}>{name}</h3>
           <FavouriteIcon id={id} className={classes.itemIcon} />
         </span>
-        <StatusSign status={status} />
+        {status && (
+          <StatusSign
+            status={status.charAt(0).toUpperCase() + status.slice(1)}
+          />
+        )}
         <p>{species}</p>
         <Link to={`/character/${id}`} className={classes.itemLink}>
           Show more

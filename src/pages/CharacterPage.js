@@ -18,23 +18,27 @@ const CharacterPage = () => {
 
   return (
     <Fragment>
-      <Pagination
-        count={data?.info?.pages}
-        onChange={pageHandler}
-        size="large"
-        page={page}
-        className="pagination"
-      />
+      {!isLoading && !isError && (
+        <Pagination
+          count={data?.info?.pages}
+          onChange={pageHandler}
+          size="large"
+          page={page}
+          className="pagination"
+        />
+      )}
       {isLoading && <CircularProgress className="isLoading" />}
       {!isLoading && !isError && <CharacterList data={data.results} />}
       {!isLoading && isError && <InfoBox message={data.error} />}
-      <Pagination
-        count={data?.info?.pages}
-        onChange={pageHandler}
-        size="large"
-        page={page}
-        className="pagination"
-      />
+      {!isLoading && !isError && (
+        <Pagination
+          count={data?.info?.pages}
+          onChange={pageHandler}
+          size="large"
+          page={page}
+          className="pagination"
+        />
+      )}
     </Fragment>
   );
 };

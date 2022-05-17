@@ -28,28 +28,32 @@ const FavouriteCharacterListPage = () => {
 
   if (Array.isArray(data) && data.length === 0)
     return <InfoBox message="Nothing to see here" />;
-
-  return (
-    <Fragment>
-      <Pagination
-        onChange={pageHandler}
-        count={maxPage}
-        page={page}
-        size="large"
-        className="pagination"
-      />
-      {isLoading && <CircularProgress className="isLoading" />}
-      {!isLoading && !isError && <CharacterList data={data} />}
-      {!isLoading && isError && <InfoBox message={data.error} />}
-      <Pagination
-        onChange={pageHandler}
-        count={maxPage}
-        page={page}
-        size="large"
-        className="pagination"
-      />
-    </Fragment>
-  );
+  else
+    return (
+      <Fragment>
+        {!isLoading && !isError && (
+          <Pagination
+            onChange={pageHandler}
+            count={maxPage}
+            page={page}
+            size="large"
+            className="pagination"
+          />
+        )}
+        {isLoading && <CircularProgress className="isLoading" />}
+        {!isLoading && !isError && <CharacterList data={data} />}
+        {!isLoading && isError && <InfoBox message={data.error} />}
+        {!isLoading && !isError && (
+          <Pagination
+            onChange={pageHandler}
+            count={maxPage}
+            page={page}
+            size="large"
+            className="pagination"
+          />
+        )}
+      </Fragment>
+    );
 };
 
 export default FavouriteCharacterListPage;

@@ -16,9 +16,7 @@ const CharacterList = (props) => {
                   id={item.id}
                   name={item.name}
                   image={item.image}
-                  status={
-                    item.status.charAt(0).toUpperCase() + item.status.slice(1)
-                  }
+                  status={item.status}
                   species={item.species}
                 />
               </li>
