@@ -20,3 +20,9 @@ code {
   right: 50%;
   top: 45%;
 }
+.pagination {
+  max-width: 45rem;
+  margin: 1.2rem auto;
+  display: flex;
+  justify-content: center;
+}

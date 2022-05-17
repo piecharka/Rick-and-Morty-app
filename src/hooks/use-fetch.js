@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+const SKIP_RESPONSE = [[], false, false];
 const useFetch = (url, { skip = false }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -22,7 +23,7 @@ const useFetch = (url, { skip = false }) => {
 
   const isError = !!(data && data.error);
 
-  return !skip ? [data, isLoading, isError] : [[], false, false];
+  return !skip ? [data, isLoading, isError] : SKIP_RESPONSE;
 };
 
 export default useFetch;

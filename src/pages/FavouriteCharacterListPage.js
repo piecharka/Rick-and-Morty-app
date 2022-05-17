@@ -3,7 +3,8 @@ import { Fragment, useContext, useState } from "react";
 import CharacterList from "../components/CharacterList/CharacterList";
 import useFetch from "../hooks/use-fetch";
 import CharacterContext from "../store/character-context";
-import Pagination from "../components/UI/Pagination";
+// import Pagination from "../components/UI/Pagination";
+import { Pagination } from "@mui/material";
 import InfoBox from "../components/UI/InfoBox";
 
 const CHUNK_SIZE = 20;
@@ -21,15 +22,32 @@ const FavouriteCharacterListPage = () => {
     { skip: ctx.favouriteCharacterList.length === 0 }
   );
 
+  const pageHandler = (e, val) => {
+    setPage(val);
+  };
+
   if (Array.isArray(data) && data.length === 0)
-    return <p>Nothing to see here</p>;
+    return <InfoBox message="Nothing to see here" />;
 
   return (
     <Fragment>
-      <Pagination changePage={setPage} max={maxPage} />
+      <Pagination
+        onChange={pageHandler}
+        count={maxPage}
+        page={page}
+        size="large"
+        className="pagination"
+      />
       {isLoading && <CircularProgress className="isLoading" />}
       {!isLoading && !isError && <CharacterList data={data} />}
       {!isLoading && isError && <InfoBox message={data.error} />}
+      <Pagination
+        onChange={pageHandler}
+        count={maxPage}
+        page={page}
+        size="large"
+        className="pagination"
+      />
     </Fragment>
   );
 };
