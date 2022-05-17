@@ -1,4 +1,4 @@
-.navigation_box {
+.navigationBox {
   height: 3.2rem;
   background-color: #abd5ec;
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: space-between;
   padding: 3.2rem;
 }
-.navigation_title {
+.navigationTitle {
   color: #fff;
   cursor: pointer;
   font-size: 2rem;
@@ -14,13 +14,13 @@
   font-weight: 700;
   transition: all 1s;
 }
-.navigation_title:hover {
+.navigationTitle:hover {
   color: #67808e;
 }
-.navigation_active {
+.navigationActive {
   color: #67808e;
 }
-.section_list {
+.sectionList {
   display: flex;
   gap: 2.4rem;
 }

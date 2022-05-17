@@ -1,4 +1,4 @@
-.pagination_form {
+.paginationForm {
   display: flex;
   gap: 1.2rem;
   align-items: center;
@@ -6,9 +6,9 @@
   right: 5%;
   top: 10%;
 }
-.pagination_form label {
+.paginationForm label {
   font-size: 3rem;
 }
-.pagination_form input {
+.paginationForm input {
   font-size: 2.4rem;
 }

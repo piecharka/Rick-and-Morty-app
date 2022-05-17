@@ -3,7 +3,7 @@ import classes from "./StatusSign.module.css";
 const StatusSign = (props) => {
   return (
     <Fragment>
-      <p className={classes.status_paragraph}>
+      <p className={classes.statusParagraph}>
         <span
           style={
             props.status === "Dead"
@@ -12,7 +12,7 @@ const StatusSign = (props) => {
               ? { color: "green" }
               : { color: "orange" }
           }
-          className={classes.status_dot}
+          className={classes.statusDot}
         >
           &bull;
         </span>

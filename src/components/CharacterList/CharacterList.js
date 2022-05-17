@@ -6,12 +6,12 @@ const CharacterList = (props) => {
   const characters = props && props.data && [props.data].flat();
 
   return (
-    <div className={classes.character_box}>
-      <ul className={classes.character_list}>
+    <div className={classes.characterBox}>
+      <ul className={classes.characterList}>
         {characters &&
           characters.map((item, key) => {
             return (
-              <li key={key} className={classes.character_list_item}>
+              <li key={key}>
                 <Character
                   id={item.id}
                   name={item.name}

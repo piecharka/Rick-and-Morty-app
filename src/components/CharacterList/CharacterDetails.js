@@ -17,14 +17,18 @@ const CharacterDetails = ({
     year: "numeric",
   });
   return (
-    <div className={classes.details_box}>
-      <img src={image} alt={name} className={classes.details_img} />
-      <div className={classes.details_content}>
-        <div className={classes.title_box}>
-          <h3 className={classes.details_title}>{name}</h3>
+    <div className={classes.detailsBox}>
+      <img src={image} alt={name} className={classes.detailsImg} />
+      <div className={classes.detailsContent}>
+        <div className={classes.titleBox}>
+          <h3 className={classes.detailsTitle}>{name}</h3>
           <FavouriteIcon id={id} />
         </div>
-        <StatusSign status={status.charAt(0).toUpperCase() + status.slice(1)} />
+        {status && (
+          <StatusSign
+            status={status.charAt(0).toUpperCase() + status.slice(1)}
+          />
+        )}
         <p>{species}</p>
         <p>{gender}</p>
         {location && <p>Last location: {location.name}</p>}

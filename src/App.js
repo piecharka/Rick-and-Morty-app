@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
+import Navigation from "./components/UI/Navigation";
 import CharacterDetailsPage from "./pages/CharacterDetailsPage";
 import CharacterPage from "./pages/CharacterPage";
 import FavouriteCharacterListPage from "./pages/FavouriteCharacterListPage";

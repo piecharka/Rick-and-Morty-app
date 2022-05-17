@@ -3,23 +3,23 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <div className={classes.navigation_box}>
+    <div className={classes.navigationBox}>
       <NavLink
         to="/"
         className={({ isActive }) =>
           isActive
-            ? `${classes.navigation_active} ${classes.navigation_title}`
-            : classes.navigation_title
+            ? `${classes.navigationActive} ${classes.navigationTitle}`
+            : classes.navigationTitle
         }
       >
         Rick and Morty app
       </NavLink>
-      <nav className={classes.section_list}>
+      <nav className={classes.sectionList}>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? `${classes.navigation_active} ${classes.navigation_title}`
-              : classes.navigation_title
+              ? `${classes.navigationActive} ${classes.navigationTitle}`
+              : classes.navigationTitle
           }
           to="/characters"
         >
@@ -29,8 +29,8 @@ const Navigation = () => {
           to="/favourite-characters"
           className={({ isActive }) =>
             isActive
-              ? `${classes.navigation_active} ${classes.navigation_title}`
-              : classes.navigation_title
+              ? `${classes.navigationActive} ${classes.navigationTitle}`
+              : classes.navigationTitle
           }
         >
           Favourite characters list

@@ -26,13 +26,13 @@ const FavouriteIcon = (props) => {
     <Fragment>
       {!favouriteCharacter && (
         <AiOutlineStar
-          className={classes.favourite_icon}
+          className={classes.favouriteIcon}
           onClick={favouriteCharacterOn}
         />
       )}
       {favouriteCharacter && (
         <AiFillStar
-          className={classes.favourite_icon}
+          className={classes.favouriteIcon}
           onClick={favouriteCharacterOff}
         />
       )}

@@ -1,4 +1,4 @@
-.favourite_icon {
+.favouriteIcon {
   position: absolute;
   right: 0;
   font-size: 3.6em;
@@ -6,6 +6,6 @@
   color: #ecabb5;
   transition: all 0.3s;
 }
-.favourite_icon:hover {
+.favouriteIcon:hover {
   color: #d49aa3;
 }

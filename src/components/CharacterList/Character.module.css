@@ -1,4 +1,4 @@
-.item_box {
+.itemBox {
   display: grid;
   max-width: 40rem;
   grid-template-columns: 0.25fr 1.5fr;
@@ -8,7 +8,7 @@
   border-radius: 2rem;
 }
 
-.item_content {
+.itemContent {
   display: flex;
   padding: 1.2rem;
   position: relative;
@@ -16,10 +16,10 @@
   gap: 0.2rem;
 }
 
-.item_content p {
+.itemContent p {
   font-size: 1.6rem;
 }
-.item_link {
+.itemLink {
   text-decoration: none;
   color: #000000;
   background-color: #ecabb5;
@@ -30,21 +30,21 @@
   position: absolute;
   bottom: 5%;
 }
-.item_title {
+.itemTitle {
   font-size: 1.8rem;
   font-weight: 700;
 }
-.title_box {
+.titleBox {
   display: flex;
   gap: 1.2rem;
   position: relative;
 }
-.item_img {
+.itemImg {
   width: 15rem;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
-.item_icon {
+.itemIcon {
   position: absolute;
   right: 5%;
 }

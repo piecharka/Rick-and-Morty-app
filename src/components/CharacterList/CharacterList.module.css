@@ -1,7 +1,7 @@
-.character_box {
+.characterBox {
   margin: 2.4rem 0;
 }
-.character_list {
+.characterList {
   list-style-type: none;
   display: grid;
   grid-template-columns: 1fr 1fr;

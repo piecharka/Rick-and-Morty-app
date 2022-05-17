@@ -22,7 +22,7 @@ const Pagination = ({ changePage, max }) => {
   return (
     <div>
       {errorMessage.length !== 0 && <InfoBox message={errorMessage} />}
-      <form className={classes.pagination_form}>
+      <form className={classes.paginationForm}>
         <label>Page:</label>
         <input
           type="number"
